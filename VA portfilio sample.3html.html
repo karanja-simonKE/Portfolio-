@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional Virtual Assistant — Simon Karanja, offering virtual admin, data, and scheduling support from Kenya." />
+  <meta name="keywords" content="Virtual Assistant Kenya, Admin Support, Email Management, Google Workspace, Microsoft Office, Simon Karanja VA" />
+  <title>Simon Karanja — Virtual Assistant Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0078D4;
+      --accent-color: #00BFA6;
+      --dark-color: #0D1B2A;
+      --light-color: #F5F7FA;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --light-color: #0D1B2A;
+      --dark-color: #F5F7FA;
+      --primary-color: #00BFA6;
+      --accent-color: #0078D4;
+      background: #0D1B2A;
+      color: #F5F7FA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      color: var(--dark-color);
+      background: var(--light-color);
+      scroll-behavior: smooth;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 10.01%);
+      background-size: 40px 40px;
+      animation: moveBg 6s linear infinite;
+    }
+    @keyframes moveBg { 0% { background-position: 0 0; } 100% { background-position: 40px 40px; } }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(13,27,42,0.9);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2rem;
+      z-index: 1000;
+      backdrop-filter: blur(6px);
+    }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; transition: color 0.3s; }
+    nav a:hover { color: var(--accent-color); }
+
+    .theme-toggle {
+      background: none;
+      border: 2px solid white;
+      border-radius: 20px;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .theme-toggle:hover { background: white; color: var(--dark-color); }
+
+    header h1 { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 0.5rem; animation: fadeInDown 1s ease; }
+    header p { font-size: 1.1rem; margin-bottom: 1rem; animation: fadeInUp 1.5s ease; }
+    .btn-primary {
+      background: white;
+      color: var(--primary-color);
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover { background: var(--accent-color); color: white; }
+
+    section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+    h2 { text-align: center; font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 2rem; }
+
+    .about p { max-width: 800px; margin: 0 auto; line-height: 1.6; text-align: center; }
+
+    .services, .skills, .projects, .testimonials, .contact { text-align: center; }
+    .services ul, .skills ul, .projects ul { list-style: none; display: grid; gap: 1rem; }
+    .services ul { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .service-icon {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover .service-icon { transform: rotate(10deg) scale(1.1); }
+
+    .projects li { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: left; }
+
+    .testimonials blockquote { font-style: italic; margin: 1rem auto; max-width: 700px; }
+
+    footer { text-align: center; background: var(--dark-color); color: white; padding: 2rem; margin-top: 3rem; }
+
+    /* Animations */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Simon Karanja</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle">☀️ / 🌙</button>
+  </nav>
+
+  <header>
+    <h1>Simon Karanja — Virtual Assistant</h1>
+    <p>Helping busy professionals stay organized, productive, and stress-free.</p>
+    <a href="#contact" class="btn-primary">Book a Call</a>
+  </header>
+
+  <section id="about" class="about fade-in">
+    <h2>About Me</h2>
+    <p>I'm Simon Karanja, a professional Virtual Assistant based in Kenya. I specialize in providing administrative, data entry, and scheduling support to help clients save time and stay organized. With a focus on efficiency and reliability, I ensure every detail is handled with care.</p>
+  </section>
+
+  <section id="services" class="services fade-in">
+    <h2>Services</h2>
+    <ul>
+      <li class="service-card">
+        <div class="service-icon">📧</div>
+        <strong>Email & Calendar Management</strong><br>Keep your schedule and inbox running smoothly with organized systems.
+      </li>
+      <li class="service-card">
+        <div class="service-icon">📊</div>
+        <strong>Data Entry & Spreadsheets</strong><br>Accurate, organized, and formatted data using Google Sheets & Excel.
+      </li>
+      <li class="service-card">
+        <div class="service-icon">📁</div>
+        <strong>File Organization</strong><br>Implement naming systems and structures to easily locate documents.
+      </li>
+      <li class="service-card">
+        <div class="service-icon">💬</div>
+        <strong>Client Communication</strong><br>Polished, professional communication and timely follow-ups.
+      </li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects fade-in">
+    <h2>Sample Projects</h2>
+    <ul>
+      <li><strong>Email Inbox Organization:</strong> Built a Gmail system that cut email clutter by 60%, improving response times.</li>
+      <li><strong>Google Sheet Data Entry:</strong> Created a data entry sheet for client information, improving tracking accuracy.</li>
+      <li><strong>Excel Meeting Tracker:</strong> Automated meeting scheduling and reminders to streamline team coordination.</li>
+      <li><strong>Google Drive File Naming:</strong> Designed an intuitive folder and naming structure for quick document retrieval.</li>
+      <li><strong>Client Email Template:</strong> Wrote a concise client update template that improved communication consistency.</li>
+    </ul>
+  </section>
+
+  <section class="testimonials fade-in">
+    <h2>What Clients Say</h2>
+    <blockquote>“Simon is incredibly reliable and detail-oriented — he keeps my inbox and calendar in perfect shape.” — <em>Client A</em></blockquote>
+    <blockquote>“Highly organized and professional. Simon helped me save hours every week through his smart systems.” — <em>Client B</em></blockquote>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:karanjasimon.va@gmail.com">karanjasimon.va@gmail.com</a></p>
+    <p>Phone: 0799367100</p>
+    <p>Location: Kenya</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/simon-karanja-3087b8370" target="_blank">www.linkedin.com/in/simon-karanja-3087b8370</a></p>
+    <a href="mailto:karanjasimon.va@gmail.com" class="btn-primary">Hire Me</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Simon Karanja — Virtual Assistant | Available for remote work worldwide</p>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
